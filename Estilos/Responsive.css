@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+  #Contacto-MANA {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  #Columna-Formulario form {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  #Columna-Formulario button {
+    left: 0;
+    margin: auto;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav img {
+    position: static;
+    margin-bottom: 1em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  #Productos ul {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  #Nosotros p {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .wsp_flotante {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+}

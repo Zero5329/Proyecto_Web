@@ -1,0 +1,117 @@
+/* Creacion de variables para aplicar color */
+:root{
+  --crema: #FFF5E1;
+  --celeste: #A7C7E7;
+  --marron: #7B3F00;
+  --blanco: #FFFFFF;
+  --dorado: #E3C567;
+}
+
+/* Estilo del cuerpo(general) */
+body{
+  background-color: var(--crema);
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+/* Encabezado */
+header{
+  background-color: var(--marron);
+  color: var(--blanco);
+  padding: 1.5em;
+}
+
+/* Los botones de navegación */
+/* centra horizontal */
+nav{
+  display: flex;
+  justify-content: center;
+}
+
+/* La img del Negocio puesta en la esquina */
+nav img{
+  width: auto;
+  height: 2.5em;
+  position: absolute;
+  left: 2em;
+}
+
+/* sin viñetas, separados por 6em */
+nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+}
+
+/* decoracion de letra */
+nav a{
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* pie de pagina */
+footer{
+  background-color: var(--marron);
+  color: var(--blanco);
+  text-align: center;
+  padding: 0.5em;
+}
+
+/* posicioón del carrito */
+.carrito-container {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+/* estilo del carrito  */
+#btn-carrito {
+  background-color: #8b4513;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* cambia color al pasar puntero */
+#btn-carrito:hover {
+  background-color: #a0522d;
+}
+
+/* separados sin margen ni viñeta */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px; 
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  /* para alinear los cuadros */
+  display: inline-block;
+}
+
+/* decoracion de botones */
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  border: 2px solid #8b4513; /* borde marrón */
+  border-radius: 8px;
+  background-color: #fdf5e6; /* fondo clarito */
+  color: #5a2d0c;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* cambia de color al pasar mouse */
+nav ul li a:hover {
+  background-color: #8b4513;
+  color: white;
+}

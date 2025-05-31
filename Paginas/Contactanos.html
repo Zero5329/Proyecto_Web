@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Estilos/Estilos_Header_Footer.css">
+  <link rel="stylesheet" href="../Estilos/Estilo_Contacto.css">
+  <link rel="stylesheet" href="../Estilos/responsive.css">
+  <title>CONTACTO_MANA</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="Index.html"><img src="../imagenes/logo.jpeg" alt="EL MANA"></a>
+      <ul>
+        <li><a href="Index.html">INICIO</a></li>
+        <li><a href="Conocenos.html">CONOCENOS</a></li>
+        <li><a href="Productos.html">PRODUCTOS</a></li>
+        <li><a href="Contactanos.html">CONTACTANOS</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón de carrito de compras -->
+    <div class="carrito-container">
+      <button id="btn-carrito">
+        🛒 Carrito (<span id="carrito-contador">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <div id="Banner">
+    <h1><a href="Index.html">Inicio</a> / Encuentranos</h1>
+  </div>
+
+  <div id="Contacto-MANA">
+    <div id="Columna-Datos">
+      <ul>
+
+        <li>
+          <img class="Contacto-Icon" src="../imagenes/Iconos/clock-time.svg" alt="Horario de Atencion">
+          <p>Lunes a sábado: 2pm a 8pm</p>
+        </li>
+
+        <li>
+          <img class="Contacto-Icon" src="../imagenes/Iconos/map.svg" alt="Ubicacion">
+          <!-- Poner enlaces del mapa correspondiente -->
+          <p><a href="">Mercado Central int. 209</a></p>
+          <p><a href="">Mercado Modelo int. - </a></p>
+        </li>
+
+        <li>
+          <img class="Contacto-Icon" src="../imagenes/Iconos/phone.svg" alt="Numero Telefono">
+          <!-- poner enlace a WhatsApp -->
+          <p><a href="">+51 939 298 778</a></p>
+        </li>
+
+        <li>
+          <img class="Contacto-Icon" src="../imagenes/Iconos/mail.svg" alt="Correo Electronico">
+          <!-- poner enlace de correo -->
+          <p><a href="">ELMANA@gmail.com</a></p>
+        </li>
+
+      </ul>
+    </div>
+
+    <div id="Columna-Formulario">
+      <h2>Envíanos un mensaje</h2>
+      <form action="" method="post">
+
+        <input class="Celda-form" type="text" name="Nombre" placeholder="Nombre y Apellido">
+        <input class="Celda-form" type="email" name="Correo" placeholder="Correo Electronico">
+        <input class="Celda-form" type="tel" name="Telefono" placeholder="Numero de Celular">
+        <textarea class="Celda-form" name="Mensaje" id="Mensaje" rows="5" placeholder="Mensaje"></textarea>        <!-- <button type="submit">Enviar</button> -->
+
+      </form>
+
+      <button type="submit">Enviar</button>
+      
+    </div>
+
+  </div>
+
+  <a href="https://wa.me/51939298778?text=Hola%20quiero%20más%20información%20sobre%20sus%20productos" class="wsp_flotante" target="_blank" title="Chatea con nosotros por WhatsApp">
+  <img src="../imagenes/Iconos/wsspp.gif.gif" alt="WhatsApp" />
+</a>
+  
+  <footer>
+    <p>@ 2025 Mana. Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+       //Mostrar cantidad del carrito al cambiar de página
+   document.addEventListener("DOMContentLoaded", function() {
+    const contador = localStorage.getItem('carritoContador') || '0';
+    const spanContador = document.getElementById('carrito-contador');
+      if (spanContador) {
+        spanContador.textContent = contador;
+      }
+     });
+  </script>
+
+
+
+</body>
+</html>

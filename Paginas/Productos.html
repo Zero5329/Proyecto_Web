@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../Estilos/Estilos_Header_Footer.css" />
+  <link rel="stylesheet" href="../Estilos/Estilo_Productos.css" />
+  <link rel="stylesheet" href="../Estilos/responsive.css">
+  <title>PRODUCTOS-MANA</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="Index.html"><img src="../imagenes/logo.jpeg" alt="EL MANA" /></a>
+      <ul>  
+        <li><a href="Index.html">INICIO</a></li>
+        <li><a href="Conocenos.html">CONOCENOS</a></li>
+        <li><a href="Productos.html">PRODUCTOS</a></li>
+        <li><a href="Contactanos.html">CONTACTANOS</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón de carrito de compras -->
+    <div class="carrito-container">
+      <button id="btn-carrito">
+        🛒 Carrito (<span id="carrito-contador">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="bd"><a href="Index.html">Inicio</a> / Productos</h1>
+
+    <section class="producto-lista">
+
+      <div class="producto-item" id="PDN">
+        <img src="../imagenes/Productos/PDN.jpeg" alt="Pudin de chocolate" />
+        <h3>Pudin de chocolate</h3>
+        <p class="precio">S/ 2.00</p>
+        <p class="descripcion">Suave y cremoso postre de chocolate con un intenso sabor a cacao,
+           ideal para disfrutar frío como una deliciosa y
+            reconfortante merienda.</p>
+        <button onclick="agregarAlCarrito()">Agregar al carrito</button>
+      </div>
+
+      <div class="producto-item" id="Mazamorra">
+        <img src="../imagenes/Productos/Mazamorra.jpeg" alt="Mazamorra" />
+        <h3>Mazamorra</h3>
+        <p class="precio">S/ 2.00</p>
+        <p class="descripcion">Postre tradicional hecho a base de maíz morado, y diferentes frutas y especias.</p>
+
+        <button onclick="mostrarPresentaciones(this)">▼ Ver presentaciones</button>
+        <div class="presentaciones">
+          <label><input type="radio" name="presentacion-mazamorra" value="Vaso"> Vaso (S/2.00)</label><br>
+                    <label><input type="radio" name="presentacion-mazamorra" value="Taper 1/2kg"> Taper 1/2 kg (S/7.00)</label><br>
+          <label><input type="radio" name="presentacion-mazamorra" value="Taper 1kg"> Taper 1 kg (S/14.00)</label><br>
+          <button onclick="agregarPresentacionAlCarrito('Mazamorra', 'presentacion-mazamorra')">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto-item" id="arroz">
+        <img src="../imagenes/Productos/Arroz_Con_Leche.jpg" alt="Arroz con Leche" />
+        <h3>Arroz con Leche</h3>
+        <p class="precio">S/ 2.00</p>
+        <p class="descripcion">Delicioso postre a base de arroz, leche y canela, con un toque de vainilla.</p>
+        <button onclick="mostrarPresentaciones(this)">▼ Ver presentaciones</button>
+        <div class="presentaciones">
+          <label><input type="radio" name="presentacion-arroz" value="Vaso"> Vaso (S/2.00)</label><br>
+          <label><input type="radio" name="presentacion-arroz" value="Taper 1/2 kg"> Taper 1/2 kg (S/5.00)</label><br>
+                    <label><input type="radio" name="presentacion-arroz" value="Taper 1kg"> Taper 1 kg (S/10.00)</label><br>
+          <button onclick="agregarPresentacionAlCarrito('Arroz con Leche', 'presentacion-arroz')">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto-item" id="FLAN">
+        <img src="../imagenes/Productos/FLAN.jpeg" alt="Flan de vainilla" />
+        <h3>Flan de vainilla</h3>
+        <p class="precio">S/ 2.00</p>
+        <p class="descripcion">Clásico postre de textura firme y sedosa, con delicado sabor a vainilla natural
+           y un toque de caramelo.</p>
+        <button onclick="agregarAlCarrito()">Agregar al carrito</button>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+        function agregarAlCarrito() {
+      let contador = parseInt(localStorage.getItem('carritoContador') || '0');
+      contador++;
+      localStorage.setItem('carritoContador', contador);
+      document.getElementById('carrito-contador').textContent = contador;
+
+      alert("¡Producto agregado al carrito!");
+    }
+
+    function agregarPresentacionAlCarrito(producto, grupoRadio) {
+      const radios = document.querySelectorAll(`input[name='${grupoRadio}']`);
+      let seleccionada = null;
+
+      radios.forEach(radio => {
+        if (radio.checked) {
+          seleccionada = radio.value;
+        }
+      });
+
+      if (!seleccionada) {
+        alert(`Por favor, elige una presentación para ${producto}.`);
+        return;
+      }
+
+      let contador = parseInt(localStorage.getItem('carritoContador') || '0');
+      contador++;
+      localStorage.setItem('carritoContador', contador);
+      document.getElementById('carrito-contador').textContent = contador;
+
+      alert(`¡Agregaste '${producto}' en presentación '${seleccionada}' al carrito!`);
+    }
+
+    function mostrarPresentaciones(boton) {
+      const presentaciones = boton.nextElementSibling;
+      presentaciones.classList.toggle("mostrar");
+
+      boton.textContent = presentaciones.classList.contains("mostrar")
+        ? "▲ Ocultar presentaciones"
+        : "▼ Ver presentaciones";
+    }
+
+      //Mostrar cantidad del carrito al cambiar de página
+   document.addEventListener("DOMContentLoaded", function() {
+    const contador = localStorage.getItem('carritoContador') || '0';
+    const spanContador = document.getElementById('carrito-contador');
+      if (spanContador) {
+        spanContador.textContent = contador;
+      }
+     });
+  </script>
+
+  <footer>
+    <p>© 2025 El Maná. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

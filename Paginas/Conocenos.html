@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Estilos/Estilos_Header_Footer.css">
+  <link rel="stylesheet" href="../Estilos/Estilo_Conocenos.css">
+  <link rel="stylesheet" href="../Estilos/responsive.css">
+  <title>Informacion_Mana</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="Index.html"><img src="../imagenes/logo.jpeg" alt="EL MANA"></a>
+      <ul>
+        <li><a href="Index.html">INICIO</a></li>
+        <li><a href="Conocenos.html">CONOCENOS</a></li>
+        <li><a href="Productos.html">PRODUCTOS</a></li>
+        <li><a href="Contactanos.html">CONTACTANOS</a></li>
+      </ul>
+    </nav>
+
+        <!-- Botón de carrito de compras -->
+    <div class="carrito-container">
+      <button id="btn-carrito">
+        🛒 Carrito (<span id="carrito-contador">0</span>)
+      </button>
+    </div>
+  </header>
+  
+ <main>
+        <!-- ¿Quiénes somos? -->
+        <section class="quienes-somos">
+            <div class="qs-texto">
+                <h2>¿Quiénes somos?</h2>
+                <p>
+                    <b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    <br><br>
+                    It has survived not only five centuries, but also the leap into electronic typesetting, 
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+                    containing Lorem Ipsum passages, and more recently with desktop publishing software like 
+                    Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+            <div class="qs-img"></div>
+        </section>
+
+        <!-- NUESTRA HISTORIA (línea de tiempo gráfica) -->
+        <section class="nuestra-historia">
+            <h2>Nuestra Historia</h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
+                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
+                into electronic typesetting, remaining essentially unchanged.
+            </p>
+            <div class="timeline">
+                <!-- EVENTO 1 -->
+                <div class="tl-row left">
+                    <div class="tl-key">
+                        <div class="tl-circle"></div>
+                        <div class="tl-rect">
+                            <div class="tl-img"></div>
+                            <div>
+                                <b>2018</b>
+                                <p>Lorem Ipsum fue la semilla del proyecto. Primeros pasos y motivación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- EVENTO 2 -->
+                <div class="tl-row right">
+                    <div class="tl-key">
+                        <div class="tl-rect">
+                            <div class="tl-img"></div>
+                            <div>
+                                <b>2019</b>
+                                <p>El equipo creció y se consolidó la primera gran meta: salir al mercado local.</p>
+                            </div>
+                        </div>
+                        <div class="tl-circle"></div>
+                    </div>
+                </div>
+                <!-- EVENTO 3 -->
+                <div class="tl-row left">
+                    <div class="tl-key">
+                        <div class="tl-circle"></div>
+                        <div class="tl-rect">
+                            <div class="tl-img"></div>
+                            <div>
+                                <b>2021</b>
+                                <p>Nos adaptamos a cambios globales y lanzamos nuestra primera tienda virtual.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- EVENTO 4 -->
+                <div class="tl-row right">
+                    <div class="tl-key">
+                        <div class="tl-rect">
+                            <div class="tl-img"></div>
+                            <div>
+                                <b>2024</b>
+                                <p>Expansión internacional, nuevos productos y mirada al futuro.</p>
+                            </div>
+                        </div>
+                        <div class="tl-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EQUIPO Y FUNDADOR -->
+        <section class="fundadores">
+            <div class="fundadores-row">
+                <div class="fundador foto-lateral" id="fundador-anterior">
+                    <div class="fundador-foto"></div>
+                    <div class="fundador-nombre"><b>Marta B.</b></div>
+                    <div class="fundador-cargo">Diseño Creativo</div>
+                </div>
+                <div class="fundador foto-central">
+                    <div class="fundador-foto"></div>
+                    <div class="fundador-nombre"><b>Pedro A.</b></div>
+                    <div class="fundador-cargo">FUNDADOR / CEO</div>
+                </div>
+                <div class="fundador foto-lateral" id="fundador-siguiente">
+                    <div class="fundador-foto"></div>
+                    <div class="fundador-nombre"><b>Jorge R.</b></div>
+                    <div class="fundador-cargo">Operaciones</div>
+                </div>
+            </div>
+            <div class="fundadores-descrip">
+                <div>
+                    <b>Marta B.</b>
+                    <p>Apasionada por el diseño, aporta creatividad y visión artística desde el primer día.</p>
+                </div>
+                <div>
+                    <b>Pedro A.</b>
+                    <p>Fundador de la marca, dirige el rumbo estratégico y la cultura organizacional de ManÁ.</p>
+                </div>
+                <div>
+                    <b>Jorge R.</b>
+                    <p>Responsable de logística y operaciones, asegura la entrega y calidad en cada producto.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+       //Mostrar cantidad del carrito al cambiar de página
+   document.addEventListener("DOMContentLoaded", function() {
+    const contador = localStorage.getItem('carritoContador') || '0';
+    const spanContador = document.getElementById('carrito-contador');
+      if (spanContador) {
+        spanContador.textContent = contador;
+      }
+     });
+  </script>
+  <footer>
+    <p>© 2025 Maná. Todos los derechos reservados.</p>
+</body>
+</html>
